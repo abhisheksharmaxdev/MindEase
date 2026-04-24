@@ -96,11 +96,36 @@ MindMate is an AI-powered assistant that provides:
 
 ## Screenshots
 
-(Add your screenshots or demo video link here)
+### Admin Dashboard
+![Admin Dashboard](./screenshots/admin-dashboard.png)
 
 ---
 
-## 🔒 Security Notes
+### Therapist Dashboard
+![Therapist Dashboard](./screenshots/therapist-dashboard.png)
+
+---
+
+### User Dashboard
+![User Dashboard](./screenshots/user-dashboard.png)
+
+---
+
+### MindMate AI Chat
+![AI Chat](./screenshots/chatbot.png)
+
+---
+
+### AI Support Response
+![AI Response](./screenshots/ai-response.png)
+![AI Response](./screenshots/ai-response1.png)
+![AI Response](./screenshots/ai-response2.png)
+![AI Response](./screenshots/ai-response3.png)
+
+---
+
+
+## Security Notes
 
 * Sensitive credentials are not exposed in the frontend
 * API keys are securely stored in environment variables
@@ -108,7 +133,7 @@ MindMate is an AI-powered assistant that provides:
 
 ---
 
-## 📌 Author
+## Author
 
 Abhishek Sharma
 B.Tech CSE (Big Data Analytics)
