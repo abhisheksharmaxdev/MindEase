@@ -13,6 +13,10 @@ function ensureRuntimeDirectories() {
   fs.mkdirSync(resumeRoot, { recursive: true });
 }
 
+app.get("/", (req, res) => {
+  res.send("MindEase API is running successfully.");
+});
+
 app.get("/api", (req, res) => {
   res.json({ message: "API working" });
 });
