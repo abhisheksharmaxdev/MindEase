@@ -54,11 +54,10 @@ import { AuthService } from '../../core/services/auth.service';
 
         <aside class="art-side">
           <img class="logo" src="https://res.cloudinary.com/daegs95ds/image/upload/v1776018041/SIH_image_13_yih65d.png" alt="MindEase Logo">
-          <h2 style="margin:0 0 10px;color:#fbc02d;">Admin access restored</h2>
-          <p style="color:#d1d5db;">This login is separate so admins can directly reach the dashboard without using user or therapist flows.</p>
+          <h2 style="margin:0 0 10px;color:#fbc02d;">Admin access</h2>
+      
           <div class="credential">
-            <div><strong>Default Admin Email:</strong> admin@mindease.com</div>
-            <div style="margin-top:8px;"><strong>Default Password:</strong> Admin@123</div>
+            <p><strong>Authorized admin access only</strong></p>
           </div>
         </aside>
       </div>
@@ -70,8 +69,8 @@ export class AdminAuthComponent {
   private readonly router = inject(Router);
 
   loginForm = {
-    email: 'admin@mindease.com',
-    password: 'Admin@123'
+    email: '',
+    password: ''
   };
   message = '';
 
