@@ -117,7 +117,6 @@ MindMate is an AI-powered assistant that provides:
 ---
 
 ### AI Support Response
-![AI Response](./screenshots/ai-response.png)
 ![AI Response](./screenshots/ai-response1.png)
 ![AI Response](./screenshots/ai-response2.png)
 ![AI Response](./screenshots/ai-response3.png)
