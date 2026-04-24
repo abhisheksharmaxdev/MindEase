@@ -129,7 +129,7 @@ It provides:
 
 ## Live Demo
 
-Frontend:   
+Frontend: 
 Backend: 
 ---
 

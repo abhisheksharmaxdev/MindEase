@@ -13,6 +13,10 @@ function ensureRuntimeDirectories() {
   fs.mkdirSync(resumeRoot, { recursive: true });
 }
 
+app.get("/api", (req, res) => {
+  res.json({ message: "API working" });
+});
+
 async function start() {
   ensureRuntimeDirectories();
   await connectDb();
