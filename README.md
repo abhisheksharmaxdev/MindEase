@@ -129,8 +129,8 @@ It provides:
 
 ## Live Demo
 
-Frontend: https://your-link  
-Backend: https://your-api-link
+Frontend:   
+Backend: 
 ---
 
 ##  Notes
