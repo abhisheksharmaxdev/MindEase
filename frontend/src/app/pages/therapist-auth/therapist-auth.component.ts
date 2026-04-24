@@ -126,7 +126,7 @@ import { AuthService } from '../../core/services/auth.service';
           </div>
           <div class="overlay-panel overlay-signup">
             <div class="logo"><img src="https://res.cloudinary.com/daegs95ds/image/upload/v1776018041/SIH_image_13_yih65d.png" alt="MindEase Logo"></div>
-            <div class="illustration-container"><img src="https://res.cloudinary.com/daegs95ds/image/upload/v1776018082/SIH_image_28_gm6bqy.png" alt="MindEase illustration"></div>
+            <div class="illustration-container"><img src="https://res.cloudinary.com/daegs95ds/image/upload/v1776101728/SIH_image_52_o1ep8x.png" alt="MindEase illustration"></div>
             <h2>Join the therapist network</h2>
             <h3>Admin approval required</h3>
             <p>Your resume and profile will appear in the admin dashboard for review.</p>
