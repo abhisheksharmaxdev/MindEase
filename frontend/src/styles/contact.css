@@ -1,0 +1,474 @@
+/* --- Base Variables & Resets --- */
+:root {
+    --bg-dark: #120822;
+    --accent-yellow: #fbc02d;
+    --text-white: #ffffff;
+    --text-gray: #a39eb5;
+    --card-bg: #ffffff;
+    --text-dark: #111827;
+    --purple-light: #9333ea; /* Or #8c52ff */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header --- */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo-container .logo {
+    height: 45px;
+    width: auto;
+}
+
+.btn-outline-yellow {
+    border: 1px solid var(--accent-yellow);
+    color: var(--accent-yellow);
+    background: transparent;
+    padding: 8px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-yellow:hover {
+    background-color: var(--accent-yellow);
+    color: var(--bg-dark);
+}
+
+/* --- Main Content Container --- */
+.contact-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --- Page Header --- */
+.page-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-header h1 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.page-header .highlight {
+    color: var(--accent-yellow);
+}
+
+.page-header p {
+    color: var(--text-gray);
+    font-size: 15px;
+}
+
+/* --- Split Layout --- */
+.contact-split {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Left card is slightly smaller than form */
+    gap: 60px;
+    width: 100%;
+}
+
+/* --- Left Card (Find a therapist) --- */
+.card-left {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-wrapper {
+    width: 100%;
+    background-color: #f8f9fa; /* Slight off-white if the image is transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.card-img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+}
+
+.card-content {
+    padding: 30px;
+}
+
+.card-content h3 {
+    color: var(--purple-light);
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin-bottom: 25px;
+}
+
+.btn-solid-yellow {
+    background-color: var(--accent-yellow);
+    color: var(--bg-dark);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-solid-yellow:hover {
+    background-color: #e5a900;
+}
+
+/* --- Right Side (Form) --- */
+.form-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-right h2 {
+    color: var(--accent-yellow);
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--accent-yellow);
+    color: var(--text-white);
+    padding: 14px 20px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    box-shadow: 0 0 0 2px rgba(251, 192, 45, 0.3);
+}
+
+/* Specific border radii for pill shape */
+.input-group input,
+.input-group select {
+    border-radius: 30px;
+}
+
+.input-group textarea {
+    border-radius: 15px;
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Phone Input Group */
+.phone-group {
+    display: flex;
+    gap: 12px;
+}
+
+.country-code {
+    flex: 0 0 90px;
+    text-align: center;
+}
+
+/* Style select dropdown options so they are readable */
+.country-code option {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+}
+
+.phone-input {
+    flex: 1;
+}
+
+/* Submit Button */
+.submit-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.submit-btn {
+    padding: 12px 35px;
+}
+
+/* --- Footer Section --- */
+.contact-banner-section {
+    padding: 40px 5% 0;
+    /* Add padding to the top */
+    margin-bottom: 40px;
+}
+
+.contact-banner {
+    background-image: url('https://res.cloudinary.com/daegs95ds/image/upload/v1776018098/SIH_image_50_dkptkr.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+
+.banner-text h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.banner-text p {
+    font-size: 1rem;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #160829;
+    border: 2px solid #160829;
+    padding: 0.7rem 1.7rem;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: #160829;
+    color: #fbc02d;
+}
+
+.footer {
+    background-color: #1e123f;
+    padding: 80px 5% 20px;
+    color: #a6a6a6;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-left {
+    flex: 1.5;
+    min-width: 280px;
+}
+
+.footer-right {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    min-width: 300px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.footer-logo-img-2 {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer-logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.footer-logo .divider {
+    width: 2px;
+    height: 40px;
+    background-color: #160829;
+}
+
+.footer-logo .logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer-info-heading {
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-icons a img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.social-icons a:hover {
+    color: #160829;
+    transform: translateY(-3px);
+}
+
+.footer-left p {
+    line-height: 1.6;
+}
+
+.footer-left .footer-info-heading {
+    margin-top: 2rem;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-column h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #a6a6a6;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fbc02d;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: #a6a6a6;
+}
+
+.designer-credit {
+    color: #fbc02d;
+}
+
+.footer-policy-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-policy-links a {
+    color: #a6a6a6;
+    text-decoration: none;
+}
+
+.footer-policy-links a:hover {
+    color: #fbc02d;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    .contact-split {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .card-left {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .top-nav {
+        padding: 20px;
+    }
+}

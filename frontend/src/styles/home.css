@@ -1,0 +1,1313 @@
+/* Project: MindEase - Mental Well-being Platform
+    Description: Main stylesheet for landing page UI, including dark theme management, 
+                 responsive grid layouts, and interactive components.
+    Author: Sharma Abhishek
+*/
+
+/* --- General Setup --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #160829;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: relative;
+    
+}
+
+.logo img {
+    height: 40px;
+    /* Adjust as needed */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #fbc02d;
+}
+
+.btn-signin {
+    background-color: transparent;
+    color: #fbc02d;
+    border: 2px solid #fbc02d;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-signin:hover {
+    background-color: #fbc02d;
+    color: #160829;
+}
+
+/* --- Dropdown --- */
+.dropdown {
+    position: relative;
+}
+
+/* FIX CLICK + HOVER ISSUE */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    background: #1a1037;
+    border-radius: 10px;
+    min-width: 150px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: all 0.3s ease;
+
+    z-index: 9999; /* 🔥 VERY IMPORTANT */
+    pointer-events: none; /* block when hidden */
+}
+
+/* SHOW STATE */
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto; /* 🔥 enable click */
+}
+
+/* ITEMS */
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background: #fbc02d;
+    color: #160829;
+}
+
+/* --- General Button Styles --- */
+.btn {
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    /* For <a> tags styled as buttons */
+    display: inline-block;
+    /* For <a> tags */
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: #fbc02d;
+    color: #160829;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fbc02d;
+    border: 2px solid #fbc02d;
+}
+
+
+/* --- Hero Section (Part 1) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    gap: 2rem;
+    min-height: 80vh;
+    position: relative;
+    background-image:
+        radial-gradient(circle at 100% 0%, rgba(120, 80, 220, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 0% 100%, rgba(120, 80, 220, 0.1) 0%, transparent 35%),
+        url('https://res.cloudinary.com/daegs95ds/image/upload/v1776018026/hero-bg_p9q5ey.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    flex-basis: 50%;
+}
+
+.hero-content h1 {
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-content .highlight {
+    color: #fbc02d;
+    font-size: 4rem;
+    font-weight: bold;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    color: #a6a6a6;
+}
+
+.hero-content p b {
+    color: #fbc02d;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-image {
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 80%;
+    height: auto;
+}
+
+/* --- How It Works Section (Part 2) --- */
+.how-it-works {
+    padding: 80px 5%;
+    text-align: center;
+    position: relative;
+    background-image: url('https://res.cloudinary.com/daegs95ds/image/upload/v1776018036/process-bg_za4hzb.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.how-it-works h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.how-it-works .subtitle {
+    font-size: 1.1rem;
+    color: #a6a6a6;
+    margin-bottom: 4rem;
+}
+
+.how-it-works-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    text-align: left;
+}
+
+.how-it-works-image {
+    flex-basis: 40%;
+    position: relative;
+}
+
+.how-it-works-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.how-it-works-grid {
+    flex-basis: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+.grid-item .icon-placeholder {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background: none;
+    /* ❌ remove gradient */
+    border-radius: 0;
+    /* optional */
+}
+
+.grid-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.grid-item .highlight-gold,
+.highlight-gold {
+    color: #fbc02d;
+}
+
+.grid-item p {
+    color: #a6a6a6;
+    line-height: 1.6;
+}
+
+/* --- Explore Therapy Section (Part 3) --- */
+
+.explore-therapy {
+    padding: 80px 5%;
+}
+
+
+.explore-therapy-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    gap: 2rem;
+}
+
+.explore-therapy-header .left-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.explore-therapy-header .left-content h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.explore-therapy-header .right-content {
+    flex: 1;
+    max-width: 400px;
+    text-align: right;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #a6a6a6;
+    padding-top: 0.5rem;
+}
+
+.explore-therapy-header .right-content .emphasize {
+    font-style: italic;
+    color: #fbc02d;
+}
+
+.explore-therapy-subheading {
+    font-size: 1.1rem;
+    color: #a6a6a6;
+    margin-bottom: 4rem;
+    text-align: left;
+}
+
+/* 🔥 NEW LAYOUT */
+.therapy-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+/* Each column (icon + title + card) */
+.therapy-item {
+    flex: 1;
+    min-width: 220px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ICON */
+.therapy-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* TITLE */
+.therapy-item h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #fbc02d;
+}
+
+/* WHITE CARD */
+.therapy-card {
+    background: #ffffff;
+    color: #333;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 100%;
+}
+
+/* CARD ITEMS */
+.therapy-card p {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.therapy-card p:last-child {
+    border-bottom: none;
+}
+
+
+/* --- Testimonials Section (Part 4) --- */
+.testimonials {
+    padding: 80px 5%;
+}
+
+.testimonials-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.testimonials-header-text h2 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.testimonials-header-text p {
+    color: #a6a6a6;
+    font-size: 1.1rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    color: #333333;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    position: relative;
+}
+
+.testimonial-card .quote-icon {
+    font-size: 5rem;
+    color: #fbc02d;
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    opacity: 0.8;
+    line-height: 1;
+}
+
+.testimonial-card .card-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonial-card .author {
+    font-weight: bold;
+}
+
+/* --- Match Therapist Section (Part 5) --- */
+.match-therapist-section {
+    padding: 80px 5%;
+}
+
+.mindmate-spotlight {
+    margin: 0 5% 80px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2rem;
+    align-items: center;
+    border-radius: 32px;
+    background:
+        radial-gradient(circle at top left, rgba(251, 192, 45, 0.18), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(140, 82, 255, 0.22), transparent 30%),
+        linear-gradient(135deg, #180a2c 0%, #120822 55%, #1d1034 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mindmate-copy h2 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.mindmate-copy p {
+    color: #ded6ea;
+    line-height: 1.8;
+    max-width: 560px;
+}
+
+.mindmate-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #fbc02d;
+    color: #160829;
+    border-radius: 999px;
+    padding: 0.55rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-bottom: 1rem;
+}
+
+.mindmate-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.mindmate-preview {
+    display: flex;
+    justify-content: center;
+}
+
+.preview-window {
+    width: 100%;
+    max-width: 440px;
+    min-height: 360px;
+    border-radius: 28px;
+    padding: 1.4rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    backdrop-filter: blur(14px);
+}
+
+.preview-bubble {
+    max-width: 88%;
+    padding: 1rem 1rem 0.95rem;
+    border-radius: 22px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.preview-bubble.assistant {
+    align-self: flex-start;
+    background: rgba(32, 17, 53, 0.92);
+    color: #f8f5ff;
+    border-bottom-left-radius: 8px;
+}
+
+.preview-bubble.user {
+    align-self: flex-end;
+    background: #8c52ff;
+    color: #fff;
+    border-bottom-right-radius: 8px;
+}
+
+.match-therapist-container {
+    display: flex;
+    background-color: #1a1037;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 450px;
+}
+
+.match-therapist-content {
+    flex-basis: 55%;
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.match-therapist-content h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.match-therapist-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.match-therapist-image-wrapper {
+    flex-basis: 45%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.match-therapist-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stats-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: #ffffff;
+    color: #1a1037;
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #7b5cff;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    padding: 1px 1px 1px 1px;
+}
+
+.stat-divider {
+    width: 2px;
+    height: 60px;
+    background-color: #e0e0e0;
+}
+
+.btn-outline-yellow {
+    background-color: transparent;
+    color: #fbc02d;
+    border: 2px solid #fbc02d;
+    padding: 0.8rem 1.8rem;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-yellow:hover {
+    background-color: #fbc02d;
+    color: #160829;
+}
+
+/* --- FAQ Section (Part 6) --- */
+.faq-section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.faq-section .subtitle {
+    font-size: 1.1rem;
+    color: #a6a6a6;
+    margin-bottom: 4rem;
+}
+
+.faq-container {
+    display: flex;
+    gap: 4rem;
+    text-align: left;
+}
+
+.faq-tabs {
+    flex-basis: 25%;
+}
+
+.faq-tab {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    color: #a6a6a6;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.faq-tab.active {
+    color: #ffffff;
+    border-bottom-color: #fbc02d;
+}
+
+.faq-content-wrapper {
+    flex-basis: 75%;
+}
+
+.faq-content {
+    display: none;
+}
+
+.faq-content.active {
+    display: block;
+}
+
+.accordion-item {
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #fbc02d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #160829;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    line-height: 1.6;
+}
+
+.accordion-content p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+/* Alternating colors */
+.faq-accordion .accordion-item:nth-child(odd) .accordion-header {
+    background-color: #4a2f8c;
+    /* Purple from image */
+    color: #ffffff;
+}
+
+.faq-accordion .accordion-item:nth-child(odd) .accordion-content {
+    background-color: #4a2f8c;
+    color: #e0e0e0;
+}
+
+.faq-accordion .accordion-item:nth-child(even) .accordion-header {
+    background-color: #ffffff;
+    color: #4a2f8c;
+}
+
+.faq-accordion .accordion-item:nth-child(even) .accordion-content {
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* --- New Footer Section (Part 8) --- */
+.contact-banner-section {
+    padding: 40px 5% 0;
+    /* Add padding to the top */
+    margin-bottom: 40px;
+}
+
+.contact-banner {
+    background-image: url('https://res.cloudinary.com/daegs95ds/image/upload/v1776018091/SIH_image_35_ad5cub.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+
+.banner-text h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.banner-text p {
+    font-size: 1rem;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #160829;
+    border: 2px solid #160829;
+    padding: 0.7rem 1.7rem;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: #160829;
+    color: #fbc02d;
+}
+
+.footer {
+    background-color: #1e123f;
+    padding: 80px 5% 20px;
+    color: #a6a6a6;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-left {
+    flex: 1.5;
+    min-width: 280px;
+}
+
+.footer-right {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    min-width: 300px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.footer-logo-img-2 {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer-logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.footer-logo .divider {
+    width: 2px;
+    height: 40px;
+    background-color: #160829;
+}
+
+.footer-logo .logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer-info-heading {
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-icons a img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.social-icons a:hover {
+    color: #160829;
+    transform: translateY(-3px);
+}
+
+.footer-left p {
+    line-height: 1.6;
+}
+
+.footer-left .footer-info-heading {
+    margin-top: 2rem;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-column h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #a6a6a6;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fbc02d;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: #a6a6a6;
+}
+
+.designer-credit {
+    color: #fbc02d;
+}
+
+.footer-policy-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-policy-links a {
+    color: #a6a6a6;
+    text-decoration: none;
+}
+
+.footer-policy-links a:hover {
+    color: #fbc02d;
+}
+
+/* --- Mobile Menu Button --- */
+.menu-btn {
+    display: none;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    z-index: 1001;
+}
+
+.menu-btn__burger {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-10px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(10px);
+}
+
+.menu-btn.open .menu-btn__burger {
+    background: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg);
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+
+    .hero,
+    .how-it-works-container,
+    .explore-therapy-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mindmate-spotlight {
+        grid-template-columns: 1fr;
+    }
+
+    .mindmate-copy {
+        text-align: center;
+    }
+
+    .mindmate-copy p {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mindmate-actions {
+        justify-content: center;
+    }
+
+    .hero-content {
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+        margin-bottom: 2rem;
+    }
+
+    .hero-content p,
+    .explore-therapy-header .right-content {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .hero-buttons,
+    .explore-therapy-header {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .how-it-works-image {
+        margin-bottom: 5rem;
+    }
+
+    .explore-therapy-header .right-content {
+        padding-top: 1rem;
+    }
+
+    .explore-therapy-subheading {
+        text-align: center;
+    }
+
+    .therapy-options {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .therapy-options .vertical-line {
+        display: none;
+    }
+
+    .therapy-option {
+        flex-basis: 45%;
+        margin-bottom: 2rem;
+    }
+
+    .expertise-grid {
+        gap: 1rem;
+    }
+
+    .expertise-column {
+        min-width: unset;
+        flex-basis: 45%;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .match-therapist-container {
+        flex-direction: column;
+    }
+
+    .match-therapist-content {
+        text-align: center;
+        padding: 3rem 2rem;
+    }
+
+    .match-therapist-buttons {
+        justify-content: center;
+    }
+
+    .match-therapist-image-wrapper {
+        min-height: 350px;
+    }
+
+    .stats-overlay {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 60%;
+        background-color: rgba(22, 8, 41, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.5s ease-in-out;
+        gap: 2rem;
+        z-index: 1000;
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    .btn-signin {
+        display: none;
+    }
+
+    .mindmate-spotlight {
+        padding: 1.5rem;
+        margin-bottom: 60px;
+    }
+
+    .preview-window {
+        min-height: 320px;
+    }
+
+    .hero-content h1,
+    .hero-content .highlight {
+        font-size: 24px;
+    }
+
+    .hero-content .highlight {
+        font-size: 3rem;
+    }
+
+    .explore-therapy-header .left-content h2 {
+        font-size: 2rem;
+    }
+
+    .explore-therapy-header .left-content,
+    .explore-therapy-header .right-content {
+        max-width: 100%;
+    }
+
+    .therapists-container {
+        padding: 2rem 1rem;
+    }
+
+    .therapists-container .expertise {
+        font-size: 1.8rem;
+    }
+
+    .expertise-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .expertise-column {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .match-therapist-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .faq-container {
+        flex-direction: column;
+    }
+
+    .faq-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .faq-tab {
+        margin-bottom: 0;
+    }
+
+    /* Footer Responsive */
+    .contact-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .how-it-works-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .grid-item .icon-placeholder {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .therapy-option {
+        flex-basis: 80%;
+    }
+
+    .therapy-option .icon-bg {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5rem;
+    }
+
+    .stats-overlay {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+
+    .footer-right {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-policy-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .preview-bubble {
+        max-width: 94%;
+    }
+}
