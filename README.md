@@ -25,7 +25,7 @@ Note: Admin access is restricted and not publicly available.
 
 ---
 
-## ✨ Features
+## Features
 
 * User Authentication (JWT-based)
 * Anonymous Concern Reporting System
