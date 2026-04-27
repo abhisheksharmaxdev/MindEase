@@ -70,7 +70,7 @@ type FaqGroup = 'therapy' | 'process';
       <p class="subtitle">Find the right therapist in a few clicks. We're here to guide you along the way.</p>
       <div class="how-it-works-container">
         <div class="how-it-works-image">
-          <img src="https://res.cloudinary.com/daegs95ds/image/upload/v1776018058/SIH_image_7_n7hgfv.png" alt="Therapist pointing">
+          <img src="https://res.cloudinary.com/daegs95ds/image/upload/v1777275247/SIH_image_7_n7hgfv.png" alt="Therapist pointing">
         </div>
         <div class="how-it-works-grid">
           <div class="grid-item" *ngFor="let item of howItWorks">
